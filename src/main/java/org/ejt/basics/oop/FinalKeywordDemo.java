@@ -1,6 +1,5 @@
 package org.ejt.basics.oop;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -17,7 +16,7 @@ import java.util.Arrays;
 
 public class FinalKeywordDemo {
 
-    final int HOURS_IN_DAYS = 20;
+    final int HOUSE_LENGTH_IN_FEET = 1200;
 
     final String PLANET_EARTH_NAME = "EARTH";
 
@@ -47,7 +46,7 @@ public class FinalKeywordDemo {
      */
     public void changeFinalVariableValueTest() {
 
-//        HOURS_IN_DAYS = 30;
+//        HOUSE_LENGTH_IN_FEET = 1400;
 //        PLANET_EARTH_NAME = "MARS";
 //        WEEK_DAYS_NAME = new String[]{"some", "values"};
 //        BLANK_FINAL_VARIABLE = "reassigning variable..";
@@ -56,43 +55,58 @@ public class FinalKeywordDemo {
     }
 
     public void intrestingArrayFinalBehavior() {
+        System.out.println(" Before change " + Arrays.toString(WEEK_DAYS_NAME));
+        //You cannot change memory reference, but you can change content of memory reference.
         WEEK_DAYS_NAME[0] = "Sunday";
         System.out.println(" Week days " + Arrays.toString(WEEK_DAYS_NAME));
+    }
+
+    public static void main(String args[]) {
+        new FinalKeywordDemo().intrestingArrayFinalBehavior();
     }
 }
 
 
-class NonFinalClass {
+class TypeAHome {
 
-    public final void cannotOverridden() {
-        System.out.println("You cannot override my definition");
+    //// You cannot change external layout of home
+    public final void govtApprovedLayout() {
+        System.out.println("This has to be as per govt approval norms. No once can change it for This time homes.");
     }
 
-    public void canBeOverridden() {
-        System.out.println("Hey any subclass can override me..");
+    public void interiorDesign() {
+        System.out.println("This is some basic suggested interior design, who just want to have their home as it is.");
     }
 }
 
 /**
  * This is a final class that cannot be extended.
  */
-final class NoInheritenceSupported {
+final class TajMahal {
 
-    public void dummyMethod() {
-        System.out.println("I does nothing...");
+    public void layout() {
+        System.out.println("This is Tajmahal layout");
+    }
+
+    public void material() {
+        System.out.println("Granite");
+    }
+
+    public void color() {
+        System.out.println("Bright White.");
     }
 }
 
-class MethodOverriding extends NonFinalClass {
+class TypeAHomeLuxuary extends TypeAHome {
 
-
-//    public void cannotOverridden() {
+//    @Override
+//    public void govtApprovedLayout() {
 //        System.out.println("Uncommeting this function/method will leads to compiler error.");
 //    }
 
     @Override
-    public void canBeOverridden() {
-        System.out.println("This method is called from a subclass of NonFinalClass.");
+    public void interiorDesign() {
+        System.out.println("100 Inch TV, Couch, King Foton Bed, Royal Paint, Aquarium etc etc...");
     }
 }
 
@@ -100,6 +114,6 @@ class MethodOverriding extends NonFinalClass {
  * Uncommenting following class will leads to compilation error.
  */
 
-//class TryingExtendingFinal extends NoInheritenceSupported {
+//class NewTajMahal extends TajMahal {
 //
 //}
