@@ -54,18 +54,56 @@ public class FinalKeywordDemo {
 //        STATIC_BLANK_FINAL_VAR = "Now reassigning static variable..";
     }
 
-    public void intrestingArrayFinalBehavior() {
+    public void intrestingObjectsFinalBehavior() {
         System.out.println(" Before change " + Arrays.toString(WEEK_DAYS_NAME));
         //You cannot change memory reference, but you can change content of memory reference.
         WEEK_DAYS_NAME[0] = "Sunday";
         System.out.println(" Week days " + Arrays.toString(WEEK_DAYS_NAME));
+
+        final FlatInfo flatInfo = new FlatInfo("Moradabad-Kundarki", 50);
+
+        // Though we can change variable values inside final object
+        flatInfo.setCurrentTenant("Arshi");
+        System.out.println("Flat info for current tenant " + flatInfo);
+        flatInfo.setCurrentTenant("Jasdev");
+        System.out.println("Flat info for current tenant " + flatInfo);
+
+        //once assigned, we cannot change reference of final object.
+
+         flatInfo = new FlatInfo("Tokyo-Kohima", 50);
     }
 
     public static void main(String args[]) {
-        new FinalKeywordDemo().intrestingArrayFinalBehavior();
+        new FinalKeywordDemo().intrestingObjectsFinalBehavior();
     }
 }
 
+class FlatInfo {
+
+    private final int builidingAge;
+    private final String buildingName;
+    private String tenantName;
+
+    public FlatInfo(String buildingName, int builidingAge) {
+        this.buildingName = buildingName;
+        this.builidingAge = builidingAge;
+
+    }
+
+    public void setCurrentTenant(String tenantName) {
+        this.tenantName = tenantName;
+    }
+
+    @Override
+    public String toString() {
+        return "FlatInfo{" +
+                "builidingAge=" + builidingAge +
+                ", tenantName='" + tenantName + '\'' +
+                '}';
+    }
+}
+
+// Scenario 2 : Defining method as final
 
 class TypeAHome {
 
@@ -78,6 +116,21 @@ class TypeAHome {
         System.out.println("This is some basic suggested interior design, who just want to have their home as it is.");
     }
 }
+
+class TypeAHomeLuxuary extends TypeAHome {
+
+//    @Override
+//    public void govtApprovedLayout() {
+//        System.out.println("Uncommeting this function/method will leads to compiler error.");
+//    }
+
+    @Override
+    public void interiorDesign() {
+        System.out.println("100 Inch TV, Couch, King Foton Bed, Royal Paint, Aquarium etc etc...");
+    }
+}
+
+// Scenario 3 : Defining class as final
 
 /**
  * This is a final class that cannot be extended.
@@ -97,23 +150,13 @@ final class TajMahal {
     }
 }
 
-class TypeAHomeLuxuary extends TypeAHome {
 
-//    @Override
-//    public void govtApprovedLayout() {
-//        System.out.println("Uncommeting this function/method will leads to compiler error.");
-//    }
-
-    @Override
-    public void interiorDesign() {
-        System.out.println("100 Inch TV, Couch, King Foton Bed, Royal Paint, Aquarium etc etc...");
-    }
-}
 
 /**
  * Uncommenting following class will leads to compilation error.
  */
 
-//class NewTajMahal extends TajMahal {
-//
-//}
+class NewTajMahal extends TajMahal {
+
+}
+
