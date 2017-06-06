@@ -1,12 +1,16 @@
 package org.ejt.basics.oop.pack;
 
+//Any import will become default import across the class,
+// which means everywhere in class you can call this class without specifying full package name.
+
 import org.ejt.basics.oop.pack.india.Alex;
 
 /**
  * Author: ThinkersHive
  * <p>
  * website : www.easyjavatutorials.in
- * Intent:
+ * <p>
+ * Intent: To demonstrate usage of package in java.
  */
 public class PackageDemo {
 
