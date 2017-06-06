@@ -1,8 +1,8 @@
-package org.ejt.basics.streams;
+package org.ejt.basics.java8.streams;
 
 import java.util.ArrayList;
 
-import static org.ejt.basics.streams.dao.StudentDAO.STUDENTS_MARKS;
+import static org.ejt.basics.dao.StudentDAO.STUDENTS_MARKS;
 
 /**
  * Author: ThinkersHive

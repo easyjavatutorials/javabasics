@@ -1,11 +1,11 @@
-package org.ejt.basics.streams;
+package org.ejt.basics.java8.streams;
 
-import org.ejt.basics.streams.dao.Student;
+import org.ejt.basics.dao.Student;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.ejt.basics.streams.dao.StudentDAO.STUDENTS;
+import static org.ejt.basics.dao.StudentDAO.STUDENTS;
 
 /**
  * Author: ThinkersHive

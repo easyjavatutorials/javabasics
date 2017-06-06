@@ -1,10 +1,10 @@
-package org.ejt.basics.streams.dao;
+package org.ejt.basics.dao;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static org.ejt.basics.streams.dao.Student.Gender.*;
+import static org.ejt.basics.dao.Student.Gender.*;
 
 /**
  * Author: ThinkersHive

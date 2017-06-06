@@ -1,6 +1,4 @@
-package org.ejt.basics.streams.dao;
-
-import java.util.List;
+package org.ejt.basics.dao;
 
 /**
  * Author: ThinkersHive
