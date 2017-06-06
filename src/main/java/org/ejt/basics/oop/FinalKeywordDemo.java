@@ -70,7 +70,7 @@ public class FinalKeywordDemo {
 
         //once assigned, we cannot change reference of final object.
 
-         flatInfo = new FlatInfo("Tokyo-Kohima", 50);
+         //flatInfo = new FlatInfo("Tokyo-Kohima", 50);
     }
 
     public static void main(String args[]) {
@@ -156,7 +156,7 @@ final class TajMahal {
  * Uncommenting following class will leads to compilation error.
  */
 
-class NewTajMahal extends TajMahal {
-
-}
+//class NewTajMahal extends TajMahal {
+//
+//}
 
