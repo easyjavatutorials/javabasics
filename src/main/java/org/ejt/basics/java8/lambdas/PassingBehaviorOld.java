@@ -17,6 +17,9 @@ import java.util.List;
  * <p>
  * Demerits of approach -> Too much verbose code, need to write new filter class say StudentAttendanceFilter, StudentGradeFilter etc
  * whenever we need to filter objects.
+ * <p>
+ * Behavior parameterization is a block of code, which changes very frequently without executing it. This block of code is later called
+ * by program with delayed execution in program.
  */
 public class PassingBehaviorOld {
 
@@ -28,10 +31,22 @@ public class PassingBehaviorOld {
         System.out.println("Total female student count " + femaleStudents.size());
         System.out.println("All female student data " + femaleStudents);
 
+        List<Student> heightMoreThan100 = filterStudent(StudentDAO.STUDENTS, new Filter<Student>() {
+
+            @Override
+            public boolean applicable(Student student) {
+                return student.getHeight() > 100;
+            }
+        });
+        System.out.println("Student height greater than 100 count " + heightMoreThan100.size());
+        System.out.println("All height wise filtered student data " + heightMoreThan100);
+
         /*
         Similarly one can write first division student filters where student pass percentage is greater than 60 or
         Student filter by low attendence etc.
          */
+
+
     }
 
     /**
