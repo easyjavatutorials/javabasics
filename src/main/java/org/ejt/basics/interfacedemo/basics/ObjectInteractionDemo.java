@@ -12,8 +12,8 @@ public class ObjectInteractionDemo {
 
     public static void main(String[] args) {
         //Lets say creating an object is equivalent to writing data to CD.
-        CompactDisk musicCD = new MusicCD("Jagjeet Singh Gazal", Arrays.asList("Tumko Dekha to", "Hoshwalo ko khabar"), Arrays.asList("Tukmo dekha to ye khayaal aaya (Actual Song)...", "Hoshwalo ko khabar kya.. (Actual Song)..."));
-        CompactDisk movieCD = new MovieCD("Dangal", Arrays.asList("Dangal Part 1", "Dangal Part 2"), Arrays.asList("Dangal Movie Content Part 1", "Dangal Movie Content Part 1"));
+        CompactDisk musicCD = new MusicCD("Jagjeet Singh Gazal Songs", Arrays.asList("Tumko Dekha to", "Hoshwalo ko khabar"), Arrays.asList("Tukmo dekha to ye khayaal aaya (Actual Song)...", "Hoshwalo ko khabar kya.. (Actual Song)..."));
+        CompactDisk movieCD = new MovieCD("Dangal Movie", Arrays.asList("Dangal Part 1", "Dangal Part 2"), Arrays.asList("Dangal Movie Content Part 1", "Dangal Movie Content Part 1"));
         CompactDisk gameCD = new PCGameCD("Call of Duty - World at War", "Call of Duty ActualGameContent....".getBytes());
         // And having access to instance variables means having access to actual objects in physical world.
 
