@@ -12,13 +12,16 @@ import java.lang.FunctionalInterface;
  * https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html
  * <p>
  * Intent: Demonstrate functional interface.
+ *
+ * They are good to know for learning Lambda expressions which is one of the amazing gift of java 8.
  */
 
 @FunctionalInterface
 public interface AnotherFunctionalInterface {
+
     void singleMethod();
 
     // A functional interface can have only one abstract method, if there are more than one
     // method as abstract then such interface cannot called an FunctionalInterface.
-    //void secondMethod();
+    // void secondMethod();
 }

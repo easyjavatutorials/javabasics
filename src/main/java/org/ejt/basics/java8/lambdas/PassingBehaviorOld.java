@@ -10,7 +10,11 @@ import java.util.List;
  * Author: ThinkersHive
  * <p>
  * website : www.easyjavatutorials.in
- * Intent: Demonstrates how java achieves passing behavior prior to java 8.
+ *
+ * Intent:      1. Defining what is Behavior parametrization.
+ *
+ *              2. Demonstrates how java achieves passing Behavior parametrization prior to java 8.
+ *
  * <p>
  * <p>
  * Merits : Generic logic to perform filtering and collection of qualified students.
@@ -18,7 +22,7 @@ import java.util.List;
  * Demerits of approach -> Too much verbose code, need to write new filter class say StudentAttendanceFilter, StudentGradeFilter etc
  * whenever we need to filter objects.
  * <p>
- * Behavior parameterization is a block of code, which changes very frequently without executing it. This block of code is later called
+ * Behavior parametrization is a block of code, which changes very frequently, passing it to program without actually executing it. This block of code is later called
  * by program with delayed execution in program.
  */
 public class PassingBehaviorOld {
@@ -58,7 +62,7 @@ public class PassingBehaviorOld {
      */
     public static List<Student> filterStudent(List<Student> itemsToFilter, Filter<Student> filter) {
         List<Student> filteredStudents = new ArrayList<>();
-        for (Student student : StudentDAO.STUDENTS) {
+        for (Student student : itemsToFilter) {
             if (filter.applicable(student)) {
                 filteredStudents.add(student);
             }
